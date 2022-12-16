@@ -14,7 +14,7 @@ const PlayerSchema = new mongoose.Schema({
     birthDate: {
         type: Date,
         required: [true, "{PATH} must be present"]
-    }
+    },
     position: {
         type: String,
         required: [true, "{PATH} must be present"],
@@ -43,6 +43,25 @@ const PlayerSchema = new mongoose.Schema({
         default: "Player has not earned any awards yet",
         minlength: [4, "{PATH} must be a minimum of 2 characters"]
 
+    },
+    infield: {
+        type: Boolean,
+        required: [true, "{PATH} must be linked to a player"],
+    },
+
+    outfield: {
+        type: Boolean,
+        required: [true, "{PATH} must be linked to a player"],
+    },
+
+    startingPitcher: {
+        type: Boolean,
+        required: [true, "{PATH} must be linked to a player"],
+    },
+
+    reliefPitcher: {
+        type: Boolean,
+        required: [true, "{PATH} must be linked to a player"],
     }
 }, {timestamps:true})
 
