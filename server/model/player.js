@@ -62,7 +62,13 @@ const PlayerSchema = new mongoose.Schema({
     reliefPitcher: {
         type: Boolean,
         required: [true, "{PATH} must be linked to a player"],
-    }
+    },
+
+    playerOfficialSite: {
+        type: String,
+        default: "Player does not have an official website",
+        minlength: [4, "{PATH} must be a minimum of 2 characters"]
+    },
 }, {timestamps:true})
 
 //create the schema and export it 
