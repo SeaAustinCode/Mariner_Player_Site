@@ -11,8 +11,16 @@ const PlayerSchema = new mongoose.Schema({
         required: [true, "{PATH} must be present"],
         minlength: [2, "{PATH} must be a minimum of 2 characters"]
     },
+    nickname: {
+        type: String,
+        minlength: [2, "{PATH} must be a minimum of 2 characters"]
+    },
     birthDate: {
         type: Date,
+        required: [true, "{PATH} must be present"]
+    },
+    imageURL: {
+        type: String,
         required: [true, "{PATH} must be present"]
     },
     position: {
@@ -24,24 +32,20 @@ const PlayerSchema = new mongoose.Schema({
     twitterHandle: {
         type: String,
         default: "Player does not have an official Twitter",
-        minlength: [4, "{PATH} must be a minimum of 2 characters"]
     },
     instagramHandle: {
         type: String,
         default: "Player does not have an official Twitter",
-        minlength: [4, "{PATH} must be a minimum of 2 characters"]
 
     },
     baseballReference: {
         type: String,
         required: [true, "{PATH} must be linked to a player"],
-        minlength: [4, "{PATH} must be a minimum of 2 characters"]
 
     },
     awards: {
         type: String,
         default: "Player has not earned any awards yet",
-        minlength: [4, "{PATH} must be a minimum of 2 characters"]
 
     },
     infield: {
@@ -67,7 +71,6 @@ const PlayerSchema = new mongoose.Schema({
     playerOfficialSite: {
         type: String,
         default: "Player does not have an official website",
-        minlength: [4, "{PATH} must be a minimum of 2 characters"]
     },
 }, {timestamps:true})
 

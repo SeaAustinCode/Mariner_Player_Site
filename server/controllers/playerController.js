@@ -4,7 +4,7 @@ module.exports = {
     // CREATE 
     create: (req, res) => {
         console.log(req.body);
-        Note.create(req.body)
+        Player.create(req.body)
             .then(newPlayer => {
                 console.log("DB successfully created a new player");
                 return res.json(newPlayer);
@@ -18,8 +18,8 @@ module.exports = {
     // READ ALL 
     findAll: (req, res) => {
         Player.find()
-        .then( (notes) => {
-            return res.json(notes);
+        .then( (players) => {
+            return res.json(players);
         })
         .catch( err => res.json(err))
     },
