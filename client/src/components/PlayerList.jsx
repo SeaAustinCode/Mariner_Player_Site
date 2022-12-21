@@ -25,11 +25,11 @@ const PlayerList = (props) => {
                 return (
                     <div key={player._id}>
                         <h5>Name {player.firstName} {player.lastName} aka {player.nickname}</h5>
-                        <img src={player.imageURL} alt={player.firstName} height="25%" width=""/>
+                        <img src={player.imageURL} alt={player.firstName} height="25%" width="25%"/>
                         <h5>Birthday: {player.birthDate}</h5>
                         <h5>Position: {player.position}</h5>
                         <h5>Twitter: {player.twitterHandle}</h5>
-                        <h5>Instagram</h5>
+                        <h5>Instagram: {player.instagramHandle}</h5>
                         <a href={player.baseballReference}>Baseball Reference</a>
                         <h5>Awards</h5>
                         <h5>Official Site</h5>
