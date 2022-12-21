@@ -25,9 +25,9 @@ const PlayerList = (props) => {
                 return (
                     <div key={player._id}>
                         <div>
-                        <h5>Name {player.firstName} {player.lastName} aka {player.nickname}</h5>
-                        </div>
                         <img src={player.imageURL} alt={player.firstName} height="25%" width="25%"/>
+                        </div>
+                        <h1>{player.firstName} {player.lastName} aka {player.nickname}</h1>
                         <h5>Birthday: {player.birthDate}</h5>
                         <h5>Position: {player.position}</h5>
                         <h5>Twitter: {player.twitterHandle}</h5>
