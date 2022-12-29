@@ -26,7 +26,7 @@ const PlayerSchema = new mongoose.Schema({
     position: {
         type: String,
         required: [true, "{PATH} must be present"],
-        minlength: [2, "{PATH} must be a minimum of 2 characters"]
+        minlength: [1, "{PATH} must be a minimum of 2 characters"]
 
     },
     twitterHandle: {

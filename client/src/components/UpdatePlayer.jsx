@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
-const CreatePlayer = (props) => {
-  
+const UpdatePlayer = (props) => {
   const navigate = useNavigate();
+
+  const { id } = useParams();
 
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -18,14 +19,36 @@ const CreatePlayer = (props) => {
   const [playerAwards, setPlayerAwards] = useState("");
   const [infield, setInfield] = useState(false);
   const [outfield, setOutfield] = useState(false);
-  const [startingPitcher, setStartingPitcher] =
-    useState(false);
-  const [reliefPitcher, setReliefPitcher] =
-    useState(false);
+  const [startingPitcher, setStartingPitcher] = useState(false);
+  const [reliefPitcher, setReliefPitcher] = useState(false);
 
-  const createPlayer = (e) => {
+  // get the data from the DB and put it in state to have the form pre-filled
+  useEffect(() => {
+    axios
+      .get("http://localhost:8000/api/players/" + id)
+      .then((res) => {
+        console.log(res.data);
+        setFirstName(res.data.firstName);
+        setLastName(res.data.lastName);
+        setNickName(res.data.nickName);
+        setBirthDate(res.data.birthDate);
+        setImageUrl(res.data.imageUrl);
+        setPosition(res.data.position);
+        setTwitterHandle(res.data.twitterHandle);
+        setInstagramHandle(res.data.instagramHandle);
+        setBaseballReference(res.data.baseballReference);
+        setPlayerAwards(res.data.playerAwards);
+        setInfield(res.data.infield);
+        setOutfield(res.data.outfield);
+        setStartingPitcher(res.data.startingPitcher);
+        setReliefPitcher(res.data.reliefPitcher);
+      })
+      .catch((err) => console.log(err));
+  }, [id]);
+
+  const updatePlayer = (e) => {
     e.preventDefault();
-    const newPlayer = {
+    const updatedPlayer = {
       firstName,
       lastName,
       nickName,
@@ -43,13 +66,13 @@ const CreatePlayer = (props) => {
     };
 
     axios
-      .post("http://localhost:8000/api/players", newPlayer)
-      .then(res => {
+      .put("http://localhost:8000/api/players/" +id, updatedPlayer)
+      .then((res) => {
         console.log(res.data);
         console.log("CLIENT SUCCESS");
         navigate("/");
       })
-      .catch(err => {
+      .catch((err) => {
         console.log(err);
         console.log(err.message);
       });
@@ -61,7 +84,7 @@ const CreatePlayer = (props) => {
       {/* <p>
             {JSON.stringify(firstName)}
         </p> */}
-      <form onSubmit={createPlayer}>
+      <form onSubmit={updatePlayer}>
         First Name:{" "}
         <input
           type="text"
@@ -166,4 +189,4 @@ const CreatePlayer = (props) => {
   );
 };
 
-export default CreatePlayer;
+export default UpdatePlayer;

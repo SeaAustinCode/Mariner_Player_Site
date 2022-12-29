@@ -15,6 +15,21 @@ const PlayerList = (props) => {
       .catch((err) => console.log(err));
   }, []);
 
+  // DELETE
+  const deletePlayer = (deleteId) => {
+    // console.log(deleteId);
+    axios
+      .delete("http://localhost:8000/api/players/" + deleteId)
+      .then(res => {
+        console.log(res.data);
+        console.log("DELETED");
+
+        // remove the player from the DOM
+        setPlayers(players.filter( (player) => player._id !== deleteId));
+      })
+      .catch(err => console.log(err));
+  };
+
   return (
     <div>
       <h2>All the Players</h2>
@@ -43,6 +58,10 @@ const PlayerList = (props) => {
             <a href={player.baseballReference}>Baseball Reference</a>
             <h5>Awards</h5>
             <h5>Official Site</h5>
+            <button>
+              <Link to={"/update/" + player._id}>Edit Player</Link>
+            </button>
+            <button onClick={() => deletePlayer(player._id)}>Delete</button>
           </div>
         );
       })}
