@@ -43,36 +43,39 @@ const PlayerSchema = new mongoose.Schema({
         required: [true, "{PATH} must be linked to a player"],
 
     },
+    baseballReferencePhoto: {
+        type: String,
+        required: [true, "{PATH} must be linked to a player"],
+    },
     awards: {
-        type: String,
-        default: "Player has not earned any awards yet",
+            type: String,
+            default: "Player has not earned any awards yet",
+    },
+        infield: {
+            type: Boolean,
+            required: [true, "{PATH} must be linked to a player"],
+        },
 
-    },
-    infield: {
-        type: Boolean,
-        required: [true, "{PATH} must be linked to a player"],
-    },
+        outfield: {
+            type: Boolean,
+            required: [true, "{PATH} must be linked to a player"],
+        },
 
-    outfield: {
-        type: Boolean,
-        required: [true, "{PATH} must be linked to a player"],
-    },
+        startingPitcher: {
+            type: Boolean,
+            required: [true, "{PATH} must be linked to a player"],
+        },
 
-    startingPitcher: {
-        type: Boolean,
-        required: [true, "{PATH} must be linked to a player"],
-    },
+        reliefPitcher: {
+            type: Boolean,
+            required: [true, "{PATH} must be linked to a player"],
+        },
 
-    reliefPitcher: {
-        type: Boolean,
-        required: [true, "{PATH} must be linked to a player"],
-    },
-
-    playerOfficialSite: {
-        type: String,
-        default: "Player does not have an official website",
-    },
-}, {timestamps:true})
+        playerOfficialSite: {
+            type: String,
+            default: "Player does not have an official website",
+        },
+    }, { timestamps: true })
 
 //create the schema and export it 
 const Player = mongoose.model('Player', PlayerSchema);

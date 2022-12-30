@@ -20,49 +20,49 @@ const PlayerList = (props) => {
     // console.log(deleteId);
     axios
       .delete("http://localhost:8000/api/players/" + deleteId)
-      .then(res => {
+      .then((res) => {
         console.log(res.data);
         console.log("DELETED");
 
         // remove the player from the DOM
-        setPlayers(players.filter( (player) => player._id !== deleteId));
+        setPlayers(players.filter((player) => player._id !== deleteId));
       })
-      .catch(err => console.log(err));
+      .catch((err) => console.log(err));
   };
 
   return (
     <div>
       <h2>All the Players</h2>
       <hr />
-      {JSON.stringify(players)}
+      {/* {JSON.stringify(players)} */}
       {players.map((player, _id) => {
         return (
-          <div key={player._id}>
-            <div>
-              <img
-                src={player.imageURL}
-                alt={player.firstName}
-                height="25%"
-                width="25%"
-              />
+            <div key={player._id} className="d-flex space-around">
+              <div>
+                <img className="responsive"
+                  src={player.baseballReferencePhoto}
+                  alt={player.firstName}
+                />
+              </div>
+              <div>
+                <Link to={"/players/" + player._id}>
+                  <h1>
+                    {player.firstName} {player.lastName} aka {player.nickname}
+                  </h1>
+                </Link>
+                <h5>Birthday: {player.birthDate}</h5>
+                <h5>Position: {player.position}</h5>
+                <h5>Twitter: {player.twitterHandle}</h5>
+                <h5>Instagram: {player.instagramHandle}</h5>
+                <a href={player.baseballReference}>Baseball Reference</a>
+                <h5>Awards</h5>
+                <h5>Official Site</h5>
+                <button>
+                  <Link to={"/update/" + player._id}>Edit Player</Link>
+                </button>
+                <button onClick={() => deletePlayer(player._id)}>Delete</button>
+              </div>
             </div>
-            <Link to={"/players/" + player._id}>
-              <h1>
-                {player.firstName} {player.lastName} aka {player.nickname}
-              </h1>
-            </Link>
-            <h5>Birthday: {player.birthDate}</h5>
-            <h5>Position: {player.position}</h5>
-            <h5>Twitter: {player.twitterHandle}</h5>
-            <h5>Instagram: {player.instagramHandle}</h5>
-            <a href={player.baseballReference}>Baseball Reference</a>
-            <h5>Awards</h5>
-            <h5>Official Site</h5>
-            <button>
-              <Link to={"/update/" + player._id}>Edit Player</Link>
-            </button>
-            <button onClick={() => deletePlayer(player._id)}>Delete</button>
-          </div>
         );
       })}
     </div>

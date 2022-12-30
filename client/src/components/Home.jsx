@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import axios from 'axios';
+import { Link } from "react-router-dom"
 
 const Home = (props) => {
 
@@ -20,7 +21,9 @@ const Home = (props) => {
         players.map((player, _id) =>{
             return (
                 <div key={player._id}>
+                    <Link to={"/players/" + player._id}>
                     <h1>{player.firstName} {player.lastName}</h1>
+                    </Link>
                     </div>
             )
         })

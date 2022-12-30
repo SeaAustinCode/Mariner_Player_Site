@@ -11,6 +11,7 @@ const CreatePlayer = (props) => {
   const [nickName, setNickName] = useState("");
   const [birthDate, setBirthDate] = useState("");
   const [imageURL, setImageUrl] = useState("");
+  const [baseballReferencePhoto, setBaseballReferencePhoto] = useState("");
   const [position, setPosition] = useState("");
   const [twitterHandle, setTwitterHandle] = useState("");
   const [instagramHandle, setInstagramHandle] = useState("");
@@ -31,6 +32,7 @@ const CreatePlayer = (props) => {
       nickName,
       birthDate,
       imageURL,
+      baseballReferencePhoto,
       position,
       twitterHandle,
       instagramHandle,
@@ -95,6 +97,13 @@ const CreatePlayer = (props) => {
           type="text"
           onChange={(e) => setImageUrl(e.target.value)}
           value={imageURL}
+        />{" "}
+        <br />
+        Baseball Reference Image URL:{" "}
+        <input
+          type="text"
+          onChange={(e) => setBaseballReferencePhoto(e.target.value)}
+          value={baseballReferencePhoto}
         />{" "}
         <br />
         Position:{" "}

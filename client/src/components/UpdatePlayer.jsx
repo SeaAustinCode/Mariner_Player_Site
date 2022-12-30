@@ -12,6 +12,7 @@ const UpdatePlayer = (props) => {
   const [nickName, setNickName] = useState("");
   const [birthDate, setBirthDate] = useState("");
   const [imageURL, setImageUrl] = useState("");
+  const [baseballReferencePhoto, setBaseballReferencePhoto] = useState("");
   const [position, setPosition] = useState("");
   const [twitterHandle, setTwitterHandle] = useState("");
   const [instagramHandle, setInstagramHandle] = useState("");
@@ -33,6 +34,7 @@ const UpdatePlayer = (props) => {
         setNickName(res.data.nickName);
         setBirthDate(res.data.birthDate);
         setImageUrl(res.data.imageUrl);
+        setBaseballReferencePhoto(res.data.baseballReferencePhoto);
         setPosition(res.data.position);
         setTwitterHandle(res.data.twitterHandle);
         setInstagramHandle(res.data.instagramHandle);
@@ -119,6 +121,13 @@ const UpdatePlayer = (props) => {
           onChange={(e) => setImageUrl(e.target.value)}
           value={imageURL}
         />{" "}
+        < br/>
+        Baseball Reference Photo URL:{" "}
+        <input
+          type="text"
+          onChange={(e) => setBaseballReferencePhoto(e.target.value)}
+          value={baseballReferencePhoto}
+        />{" "}
         <br />
         Position:{" "}
         <input
@@ -183,7 +192,7 @@ const UpdatePlayer = (props) => {
           checked={reliefPitcher}
         />{" "}
         <br />
-        <button>Create New Player</button> <br />
+        <button>Update Player</button> <br />
       </form>
     </div>
   );
