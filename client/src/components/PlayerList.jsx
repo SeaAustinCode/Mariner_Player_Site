@@ -32,37 +32,39 @@ const PlayerList = (props) => {
 
   return (
     <div>
-      <h2>All the Players</h2>
-      <hr />
-      {/* {JSON.stringify(players)} */}
       {players.map((player, _id) => {
         return (
-            <div key={player._id} className="d-flex space-around">
-              <div>
-                <img className="responsive"
-                  src={player.baseballReferencePhoto}
-                  alt={player.firstName}
-                />
-              </div>
-              <div>
-                <Link to={"/players/" + player._id}>
-                  <h1>
-                    {player.firstName} {player.lastName} aka {player.nickname}
-                  </h1>
-                </Link>
-                <h5>Birthday: {player.birthDate}</h5>
-                <h5>Position: {player.position}</h5>
-                <h5>Twitter: {player.twitterHandle}</h5>
-                <h5>Instagram: {player.instagramHandle}</h5>
-                <a href={player.baseballReference}>Baseball Reference</a>
-                <h5>Awards</h5>
-                <h5>Official Site</h5>
-                <button>
-                  <Link to={"/update/" + player._id}>Edit Player</Link>
-                </button>
-                <button onClick={() => deletePlayer(player._id)}>Delete</button>
-              </div>
+          <div
+            key={player._id}
+            className="d-flex space-around container align-items-center"
+          >
+            <div className="container;">
+              <img
+                className="baseballReference-image-styling"
+                src={player.baseballReferencePhoto}
+                alt={player.firstName}
+              />
+              <Link to={"/players/" + player._id}>
+                <h1>
+                  {player.firstName} {player.lastName}
+                </h1>
+              </Link>
+              <a href={player.baseballReference}>Baseball Reference</a>
             </div>
+            <div>
+              <h5>Birthday: {player.birthDate}</h5>
+              <h5>Position: {player.position}</h5>
+              <h5>Twitter: {player.twitterHandle}</h5>
+              <h5>Instagram: {player.instagramHandle}</h5>
+              
+              {/* <h5>Awards: {player.awards} </h5> */}
+              {/* <h5>Official Site</h5> */}
+              <button>
+                <Link to={"/update/" + player._id}>Edit Player</Link>
+              </button>
+              <button onClick={() => deletePlayer(player._id)}>Delete</button>
+            </div>
+          </div>
         );
       })}
     </div>

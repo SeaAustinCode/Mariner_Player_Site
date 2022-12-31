@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  font-family: Mariners;
 }
 
 .App-logo {
@@ -11,6 +12,11 @@
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
+}
+
+@font-face {
+  font-family: Mariners;
+  src: url(./font/MLB\ Mariners\ Regular.ttf);
 }
 
 .App-header {
@@ -48,4 +54,30 @@
 .responsive {
   width: 100%;
   height: auto;
+}
+
+.playerlist-container {
+  border: teal;
+  border-width: 1rem solid;
+  height: 10rem; 
+}
+
+.container {
+  /* border: red solid;
+  border-width: 1rem solid; */
+  padding: 2rem;
+  background-color: teal;
+}
+
+.margin {
+  margin: 1rem;
+}
+
+.baseballReference-image-styling {
+  border-radius: 4rem;
+  height: 50%;
+}
+
+.align-items-center {
+  align-items: center;
 }
