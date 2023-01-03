@@ -1,17 +1,8 @@
 .App {
-  text-align: center;
   font-family: Mariners;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+  height: 100vh;
+  width: 100%;
+  padding-top: 1rem;
 }
 
 @font-face {
@@ -19,28 +10,8 @@
   src: url(./font/MLB\ Mariners\ Regular.ttf);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.repeating_bg_image {
+  background-image: url(https://mktg.mlbstatic.com/mariners/images/zoom/zoom_bg_01.jpg);
 }
 
 .d-flex {
@@ -57,21 +28,33 @@
 }
 
 .playerlist-container {
-  border: teal;
+  border: #005C5C;
   border-width: 1rem solid;
   height: 10rem; 
 }
 
 .container {
-  /* border: red solid;
-  border-width: 1rem solid; */
   padding: 2rem;
-  background-color: teal;
+  background-color: #005C5C;
+  border-radius: 20%;
+  width: 20%;
+  margin: auto;
+  margin-top: 2rem;
+  border-width: 2rem solid;
+  border-color: #c4ced4;
+  border-style: double;
+  text-align: center;
 }
 
 .margin {
   margin: 1rem;
 }
+
+/* .width-100 {
+  width: 100%;
+  margin-left: 2rem;
+  margin-right: 2rem;
+} */
 
 .baseballReference-image-styling {
   border-radius: 4rem;
@@ -80,4 +63,50 @@
 
 .align-items-center {
   align-items: center;
+}
+
+.silver-color {
+  color: #c4ced4;
+}
+
+.navy-color {
+  color:#0C2C56;
+}
+
+.header-component-styling {
+  background-color: #005C5C;
+  height: 3rem;
+  margin-bottom: 2rem;
+  border-color: #c4ced4;
+  border-top-style: double;
+  border-bottom-style: double;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.title-component-styling {
+  background-color: #0C2C56;
+  color: #c4ced4;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: auto;
+}
+
+.footer-component-styling {
+  background-color: #005C5C;
+  height: 3rem;
+  /* margin-bottom: 2rem; */
+  margin-top: 2rem;
+  border-color: #c4ced4;
+  border-top-style: double;
+  border-bottom-style: double;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: absolute; /* might need to fix this as bottom of page is not responsive */
+  left: 0;
+  bottom: 0;
+  right: 0;
 }

@@ -29,6 +29,7 @@ const PlayerList = (props) => {
       })
       .catch((err) => console.log(err));
   };
+  // console.log(player.baseballReference)
 
   return (
     <div>
@@ -44,26 +45,25 @@ const PlayerList = (props) => {
                 src={player.baseballReferencePhoto}
                 alt={player.firstName}
               />
-              <Link to={"/players/" + player._id}>
-                <h1>
+              <Link to={"/players/" + player._id} style={{textDecoration: "none"}}>
+                <h1 className="silver-color">
                   {player.firstName} {player.lastName}
                 </h1>
               </Link>
-              <a href={player.baseballReference}>Baseball Reference</a>
+              <a href={player.baseballReference} className="silver-color" style={{textDecoration: "none"}}>Baseball Reference </a>
             </div>
-            <div>
+            {/* <div>
               <h5>Birthday: {player.birthDate}</h5>
               <h5>Position: {player.position}</h5>
               <h5>Twitter: {player.twitterHandle}</h5>
               <h5>Instagram: {player.instagramHandle}</h5>
-              
-              {/* <h5>Awards: {player.awards} </h5> */}
-              {/* <h5>Official Site</h5> */}
+              <h5>Awards: {player.awards} </h5>
+              <h5>Official Site</h5>
               <button>
                 <Link to={"/update/" + player._id}>Edit Player</Link>
               </button>
               <button onClick={() => deletePlayer(player._id)}>Delete</button>
-            </div>
+            </div> */}
           </div>
         );
       })}

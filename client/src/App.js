@@ -5,16 +5,17 @@ import Home from './components/Home';
 import SinglePlayer from './components/SinglePlayer';
 import CreatePlayer from './components/CreatePlayer';
 import UpdatePlayer from './components/UpdatePlayer';
+import HeaderComponent from './components/HeaderComponent';
+import FooterComponent from './components/FooterComponent';
 
 
 function App() {
   return (
-    <div className="App">
-      <h1>Players</h1>
-      <Link to="/">Home</Link>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      <Link to="/create">Create</Link>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      <Link to="/players">View all Players</Link>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      <hr />
+    <div className="App repeating_bg_image">
+      {/* <h1 className=''>Players</h1> */}
+      <HeaderComponent />
+      
+      {/* <hr /> */}
 
       <Routes>
         {/* HOME */}
@@ -35,6 +36,7 @@ function App() {
         {/* REDIRECT -- must be at the end of the routes*/}
         <Route path="*" element={<Navigate to ="/players/" replace />} />  {/* replace needed to replace history of the browser */}
       </Routes>
+      <FooterComponent />
     </div>
   );
 }
