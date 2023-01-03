@@ -12,6 +12,10 @@
 
 .repeating_bg_image {
   background-image: url(https://mktg.mlbstatic.com/mariners/images/zoom/zoom_bg_01.jpg);
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .d-flex {
@@ -65,12 +69,20 @@
   align-items: center;
 }
 
+.justify-content-center {
+  justify-content: center;
+}
+
 .silver-color {
   color: #c4ced4;
 }
 
 .navy-color {
   color:#0C2C56;
+}
+
+.red-color {
+  color: #D50032;
 }
 
 .header-component-styling {

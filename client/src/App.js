@@ -7,6 +7,10 @@ import CreatePlayer from './components/CreatePlayer';
 import UpdatePlayer from './components/UpdatePlayer';
 import HeaderComponent from './components/HeaderComponent';
 import FooterComponent from './components/FooterComponent';
+import InfielderComponent from './components/InfielderComponent';
+import OutfielderComponent from './components/OutfielderComponent';
+import StartingPitcherComponent from './components/StartingPitcherComponent';
+import LosBomberosComponent from './components/LosBomberosComponent';
 
 
 function App() {
@@ -33,10 +37,22 @@ function App() {
         {/* UPDATE PLAYER PAGE */}
         <Route path="/update/:id" element={<UpdatePlayer/>} />
 
+        {/* FILTERED INFIELD PAGE */}
+        <Route path="/infielders" element={<InfielderComponent/>} />
+
+        {/* FILTERED OUTFIELD PAGE */}
+        <Route path="/outfielders" element={<OutfielderComponent/>} />
+
+        {/* FILTERED STARTING PITCHER PAGE */}
+        <Route path="/starting-pitchers" element={<StartingPitcherComponent/>} />
+
+        {/* FILTERED RELIEF PITCHER PAGE */}
+        <Route path="/los-bomberos" element={<LosBomberosComponent/>} />
+
         {/* REDIRECT -- must be at the end of the routes*/}
         <Route path="*" element={<Navigate to ="/players/" replace />} />  {/* replace needed to replace history of the browser */}
       </Routes>
-      <FooterComponent />
+      {/* <FooterComponent /> */}
     </div>
   );
 }
