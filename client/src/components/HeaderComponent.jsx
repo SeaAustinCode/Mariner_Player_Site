@@ -1,9 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import WeatherComponent from "./WeatherComponent";
 
 const HeaderComponent = (props) => {
   return (
     <>
+    <WeatherComponent />
       <h1 className="title-component-styling">GoMs</h1>
       <div className="header-component-styling">
         <div>
@@ -24,7 +26,7 @@ const HeaderComponent = (props) => {
               style={{ textDecoration: "none" }}
               className="silver-color"
             >
-              Create
+              Admin
             </Link>
           </h2>
         </div>
