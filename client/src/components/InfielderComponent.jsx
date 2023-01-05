@@ -18,7 +18,7 @@ const InfielderComponent = (props) => {
   return (
     <>
       <div className="d-flex">
-        <div className="container width-100">
+        <div className="container">
           <h1 className="navy-color">Infielders</h1>
           {players.filter(player => player.infield === true).map(filteredInfield => {
             return (

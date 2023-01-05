@@ -5,10 +5,10 @@ import WeatherComponent from "./WeatherComponent";
 const HeaderComponent = (props) => {
   return (
     <>
-    <WeatherComponent />
-      <h1 className="title-component-styling">GoMs</h1>
+      <WeatherComponent />
+      <h1 className="title-component-styling">Mariners</h1>
       <div className="header-component-styling">
-        <div>
+        <div className="header-nav-content">
           <h2>
             <Link
               to="/"
@@ -19,7 +19,18 @@ const HeaderComponent = (props) => {
             </Link>
           </h2>
         </div>
-        <div>
+        <div className="header-nav-content">
+          <h2>
+            <Link
+              to="/players"
+              style={{ textDecoration: "none" }}
+              className="silver-color"
+            >
+              All Players
+            </Link>
+          </h2>
+        </div>
+        <div className="header-nav-content">
           <h2>
             <Link
               to="/create"
@@ -27,17 +38,6 @@ const HeaderComponent = (props) => {
               className="silver-color"
             >
               Admin
-            </Link>
-          </h2>
-        </div>
-        <div>
-          <h2>
-            <Link
-              to="/players"
-              style={{ textDecoration: "none" }}
-              className="silver-color"
-            >
-              View all Players
             </Link>
           </h2>
         </div>

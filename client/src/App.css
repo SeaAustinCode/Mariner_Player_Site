@@ -2,7 +2,7 @@
   font-family: Mariners;
   height: 100vh;
   width: 100%;
-  padding-top: 1rem;
+  /* padding-top: 1rem; */
 }
 
 @font-face {
@@ -89,13 +89,18 @@
 .header-component-styling {
   background-color: #005C5C;
   height: 3rem;
-  margin-bottom: 2rem;
   border-color: #c4ced4;
   border-top-style: double;
   border-bottom-style: double;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
+}
+
+.header-nav-content {
+  display: flex;
+  margin-left: 2rem;
+  margin-right: 2rem;
 }
 
 .title-component-styling {

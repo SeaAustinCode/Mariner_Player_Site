@@ -45,11 +45,11 @@ const Home = (props) => {
           <h2><a href="https://www.mlb.com/mariners/tickets/events/t-mobile-park-events" className="silver-color" style={{textDecoration: "none"}}>Upcoming Events</a></h2>
         </div>
         <div className="container">
-          <h1 className="navy-color">Filter by position</h1>
-          <Link to ={"/infielders"}><h2 className="silver-color" style={{textDecoration: "none"}}>Infielders</h2> </Link>
-          <Link to={"/outfielders"}><h2 className="silver-color" style={{textDecoration: "none"}}>Outfielders</h2></Link>
-          <Link to={"/starting-pitchers"}><h2 className="silver-color" style={{textDecoration: "none"}}>Starting Pitchers</h2></Link>
-          <Link to={"/los-bomberos"}><h2 className="red-color" style={{textDecoration: "none"}}>Los Bomberos</h2></Link>
+          <h1 className="navy-color" >Filter by position</h1>
+          <Link to ={"/infielders"} style={{textDecoration: "none"}}><h2 className="silver-color" >Infielders</h2> </Link>
+          <Link to={"/outfielders"} style={{textDecoration: "none"}}><h2 className="silver-color" >Outfielders</h2></Link>
+          <Link to={"/starting-pitchers"} style={{textDecoration: "none"}}><h2 className="silver-color">Starting Pitchers</h2></Link>
+          <Link to={"/los-bomberos"} style={{textDecoration: "none"}}><h2 className="red-color">Los Bomberos</h2></Link>
         </div>
         <div className="container">
           <h1>T-Mobile</h1>

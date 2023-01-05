@@ -59,7 +59,7 @@ const CreatePlayer = (props) => {
   };
 
   return (
-    <div>
+    <div className="container">
       {/* <p>
             {JSON.stringify(firstName)}
         </p> */}

@@ -82,7 +82,7 @@ const UpdatePlayer = (props) => {
   };
 
   return (
-    <div>
+    <div className="container">
       {/* <p>
             {JSON.stringify(firstName)}
         </p> */}
