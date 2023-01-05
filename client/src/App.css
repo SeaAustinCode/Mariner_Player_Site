@@ -41,7 +41,7 @@
   padding: 2rem;
   background-color: #005C5C;
   border-radius: 20%;
-  width: 20%;
+  width: 20rem;
   margin: auto;
   margin-top: 2rem;
   border-width: 2rem solid;
@@ -53,12 +53,6 @@
 .margin {
   margin: 1rem;
 }
-
-/* .width-100 {
-  width: 100%;
-  margin-left: 2rem;
-  margin-right: 2rem;
-} */
 
 .baseballReference-image-styling {
   border-radius: 4rem;
@@ -83,6 +77,13 @@
 
 .red-color {
   color: #D50032;
+}
+
+.map-style {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  flex: 1;
 }
 
 .header-component-styling {

@@ -32,14 +32,14 @@ const PlayerList = (props) => {
   // console.log(player.baseballReference)
 
   return (
-    <div>
+    <div className="map-style">
       {players.map((player, _id) => {
         return (
           <div
             key={player._id}
             className="d-flex space-around container align-items-center"
           >
-            <div className="container;">
+            <div>
               <img
                 className="baseballReference-image-styling"
                 src={player.baseballReferencePhoto}
