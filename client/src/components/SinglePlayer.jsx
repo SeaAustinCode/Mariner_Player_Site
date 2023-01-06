@@ -20,7 +20,7 @@ const SinglePlayer = (props) => {
     
 
   return (
-    <div>
+    <div className='container'>
         <h1>{thisPlayer.firstName} {thisPlayer.lastName}</h1>
         <h2>{thisPlayer.nickname}</h2>
         <h2>{thisPlayer.birthDate}</h2>
