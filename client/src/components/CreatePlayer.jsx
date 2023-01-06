@@ -113,7 +113,7 @@ const CreatePlayer = (props) => {
           value={position}
         />{" "}
         <br />
-        Twitter:{" "}
+        Twitter: {" "}
         <input
           type="text"
           onChange={(e) => setTwitterHandle(e.target.value)}

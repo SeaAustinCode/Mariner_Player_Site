@@ -9,7 +9,7 @@ const UpdatePlayer = (props) => {
 
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
-  const [nickName, setNickName] = useState("");
+  const [nickname, setNickname] = useState("");
   const [birthDate, setBirthDate] = useState("");
   const [imageURL, setImageUrl] = useState("");
   const [baseballReferencePhoto, setBaseballReferencePhoto] = useState("");
@@ -17,7 +17,7 @@ const UpdatePlayer = (props) => {
   const [twitterHandle, setTwitterHandle] = useState("");
   const [instagramHandle, setInstagramHandle] = useState("");
   const [baseballReference, setBaseballReference] = useState("");
-  const [playerAwards, setPlayerAwards] = useState("");
+  const [awards, setAwards] = useState("");
   const [infield, setInfield] = useState(false);
   const [outfield, setOutfield] = useState(false);
   const [startingPitcher, setStartingPitcher] = useState(false);
@@ -31,7 +31,7 @@ const UpdatePlayer = (props) => {
         console.log(res.data);
         setFirstName(res.data.firstName);
         setLastName(res.data.lastName);
-        setNickName(res.data.nickName);
+        setNickname(res.data.nickname);
         setBirthDate(res.data.birthDate);
         setImageUrl(res.data.imageUrl);
         setBaseballReferencePhoto(res.data.baseballReferencePhoto);
@@ -39,7 +39,7 @@ const UpdatePlayer = (props) => {
         setTwitterHandle(res.data.twitterHandle);
         setInstagramHandle(res.data.instagramHandle);
         setBaseballReference(res.data.baseballReference);
-        setPlayerAwards(res.data.playerAwards);
+        setAwards(res.data.awards);
         setInfield(res.data.infield);
         setOutfield(res.data.outfield);
         setStartingPitcher(res.data.startingPitcher);
@@ -53,14 +53,14 @@ const UpdatePlayer = (props) => {
     const updatedPlayer = {
       firstName,
       lastName,
-      nickName,
+      nickname,
       birthDate,
       imageURL,
       position,
       twitterHandle,
       instagramHandle,
       baseballReference,
-      playerAwards,
+      awards,
       infield,
       outfield,
       startingPitcher,
@@ -104,8 +104,8 @@ const UpdatePlayer = (props) => {
         Nickname:{" "}
         <input
           type="text"
-          onChange={(e) => setNickName(e.target.value)}
-          value={nickName}
+          onChange={(e) => setNickname(e.target.value)}
+          value={nickname}
         />{" "}
         <br />
         Birthday YYYY-M-DD:{" "}
@@ -136,7 +136,7 @@ const UpdatePlayer = (props) => {
           value={position}
         />{" "}
         <br />
-        Twitter:{" "}
+        Twitter: {" "}
         <input
           type="text"
           onChange={(e) => setTwitterHandle(e.target.value)}
@@ -160,8 +160,8 @@ const UpdatePlayer = (props) => {
         Awards:{" "}
         <input
           type="text"
-          onChange={(e) => setPlayerAwards(e.target.value)}
-          value={playerAwards}
+          onChange={(e) => setAwards(e.target.value)}
+          value={awards}
         />{" "}
         <br />
         Infield:{" "}

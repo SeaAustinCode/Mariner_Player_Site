@@ -1,5 +1,5 @@
 import './App.css';
-import {Link, Routes, Route, Navigate} from "react-router-dom";
+import { Link, Routes, Route, Navigate } from "react-router-dom";
 import PlayerList from './components/PlayerList';
 import Home from './components/Home';
 import SinglePlayer from './components/SinglePlayer';
@@ -15,44 +15,46 @@ import LosBomberosComponent from './components/LosBomberosComponent';
 
 function App() {
   return (
-    <div className="App repeating_bg_image">
-      {/* <h1 className=''>Players</h1> */}
-      <HeaderComponent />
-      
-      {/* <hr /> */}
+    <div className="App responsive">
+      <div className='repeating_bg_image'>
+        {/* <h1 className=''>Players</h1> */}
+        <HeaderComponent />
 
-      <Routes>
-        {/* HOME */}
-        <Route path='/' element={<Home/>} />
+        {/* <hr /> */}
 
-        {/* ALL PLAYERS */}
-        <Route path="/players" element={<PlayerList/>} />
+        <Routes>
+          {/* HOME */}
+          <Route path='/' element={<Home />} />
 
-        {/* SINGLE PLAYER PAGE */}
-        <Route path="/players/:id" element={<SinglePlayer/>} />
+          {/* ALL PLAYERS */}
+          <Route path="/players" element={<PlayerList />} />
 
-        {/* CREATE PLAYER PAGE */}
-        <Route path="/create" element={<CreatePlayer/>} />
+          {/* SINGLE PLAYER PAGE */}
+          <Route path="/players/:id" element={<SinglePlayer />} />
 
-        {/* UPDATE PLAYER PAGE */}
-        <Route path="/update/:id" element={<UpdatePlayer/>} />
+          {/* CREATE PLAYER PAGE */}
+          <Route path="/create" element={<CreatePlayer />} />
 
-        {/* FILTERED INFIELD PAGE */}
-        <Route path="/infielders" element={<InfielderComponent/>} />
+          {/* UPDATE PLAYER PAGE */}
+          <Route path="/update/:id" element={<UpdatePlayer />} />
 
-        {/* FILTERED OUTFIELD PAGE */}
-        <Route path="/outfielders" element={<OutfielderComponent/>} />
+          {/* FILTERED INFIELD PAGE */}
+          <Route path="/infielders" element={<InfielderComponent />} />
 
-        {/* FILTERED STARTING PITCHER PAGE */}
-        <Route path="/starting-pitchers" element={<StartingPitcherComponent/>} />
+          {/* FILTERED OUTFIELD PAGE */}
+          <Route path="/outfielders" element={<OutfielderComponent />} />
 
-        {/* FILTERED RELIEF PITCHER PAGE */}
-        <Route path="/los-bomberos" element={<LosBomberosComponent/>} />
+          {/* FILTERED STARTING PITCHER PAGE */}
+          <Route path="/starting-pitchers" element={<StartingPitcherComponent />} />
 
-        {/* REDIRECT -- must be at the end of the routes*/}
-        <Route path="*" element={<Navigate to ="/players/" replace />} />  {/* replace needed to replace history of the browser */}
-      </Routes>
-      {/* <FooterComponent /> */}
+          {/* FILTERED RELIEF PITCHER PAGE */}
+          <Route path="/los-bomberos" element={<LosBomberosComponent />} />
+
+          {/* REDIRECT -- must be at the end of the routes*/}
+          <Route path="*" element={<Navigate to="/players/" replace />} />  {/* replace needed to replace history of the browser */}
+        </Routes>
+        {/* <FooterComponent /> */}
+      </div>
     </div>
   );
 }

@@ -2,7 +2,6 @@
   font-family: Mariners;
   height: 100vh;
   width: 100%;
-  /* padding-top: 1rem; */
 }
 
 @font-face {
@@ -11,11 +10,14 @@
 }
 
 .repeating_bg_image {
-  background-image: url(https://mktg.mlbstatic.com/mariners/images/zoom/zoom_bg_01.jpg);
-  height: 100%;
+  background-image: url(https://mktg.mlbstatic.com/mariners/images/zoom/zoom_bg_01.jpg);;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  overflow: hidden;
+  min-width: 100%;
+  min-height: 100%;
+  position: fixed;  
 }
 
 .d-flex {

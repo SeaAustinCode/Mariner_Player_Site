@@ -6,7 +6,7 @@ const HeaderComponent = (props) => {
   return (
     <>
       <WeatherComponent />
-      <h1 className="title-component-styling">Mariners</h1>
+      <h1 className="title-component-styling">Legion of Broom</h1>
       <div className="header-component-styling">
         <div className="header-nav-content">
           <h2>
