@@ -15,7 +15,7 @@ import LosBomberosComponent from './components/LosBomberosComponent';
 
 function App() {
   return (
-    <div className="App responsive">
+    <div className="App repeating_bg_image">
       <div className='repeating_bg_image'>
         {/* <h1 className=''>Players</h1> */}
         <HeaderComponent />
@@ -53,7 +53,7 @@ function App() {
           {/* REDIRECT -- must be at the end of the routes*/}
           <Route path="*" element={<Navigate to="/players/" replace />} />  {/* replace needed to replace history of the browser */}
         </Routes>
-        {/* <FooterComponent /> */}
+        <FooterComponent />
       </div>
     </div>
   );

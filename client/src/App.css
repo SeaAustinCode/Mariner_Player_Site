@@ -10,18 +10,20 @@
 }
 
 .repeating_bg_image {
-  background-image: url(https://mktg.mlbstatic.com/mariners/images/zoom/zoom_bg_01.jpg);;
-  background-position: center;
-  background-repeat: no-repeat;
+  background-image: url(https://mktg.mlbstatic.com/mariners/images/zoom/zoom_bg_01.jpg);
+  background-image: no-repeat center fixed;
   background-size: cover;
-  overflow: hidden;
-  min-width: 100%;
-  min-height: 100%;
-  position: fixed;  
+  background-repeat: no-repeat;
 }
 
 .d-flex {
   display: flex;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr; /* fr = fraction unit for responsive design  */
+  grid-template-rows: 2fr 1fr;
 }
 
 .space-around {
@@ -52,8 +54,12 @@
   text-align: center;
 }
 
-.margin {
-  margin: 1rem;
+.gap {
+  gap: 2rem;
+}
+
+.margin-bottom {
+  margin: 2rem;
 }
 
 .baseballReference-image-styling {
@@ -117,16 +123,12 @@
 .footer-component-styling {
   background-color: #005C5C;
   height: 3rem;
-  /* margin-bottom: 2rem; */
-  margin-top: 2rem;
   border-color: #c4ced4;
   border-top-style: double;
   border-bottom-style: double;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  position: absolute; /* might need to fix this as bottom of page is not responsive */
-  left: 0;
-  bottom: 0;
-  right: 0;
+  vertical-align: bottom;
+  margin-top: 2rem;
 }

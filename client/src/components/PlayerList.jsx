@@ -32,7 +32,7 @@ const PlayerList = (props) => {
   // console.log(player.baseballReference)
 
   return (
-    <div className="map-style">
+    <div className="map-style gap">
       {players.map((player, _id) => {
         return (
           <div
@@ -61,8 +61,8 @@ const PlayerList = (props) => {
                 Baseball Reference{" "}
               </a>
             </div>
-            <div>
-              <h5>Birthday: {player.birthDate.substring(5,7)}-{player.birthDate.substring(8,10)}-{player.birthDate.substring(0,4)}</h5> {/* Formatted birthdate to (YYYY-MM-DD) */}
+            {/* <div>
+              <h5>Birthday: {player.birthDate.substring(5,7)}-{player.birthDate.substring(8,10)}-{player.birthDate.substring(0,4)}</h5> Formatted birthdate to (YYYY-MM-DD)
               <h5>Position: {player.position}</h5>
               <h5>Twitter: {player.twitterHandle}</h5>
               <h5>Instagram: {player.instagramHandle}</h5>
@@ -72,7 +72,7 @@ const PlayerList = (props) => {
                 <Link to={"/update/" + player._id}>Edit Player</Link>
               </button>
               <button onClick={() => deletePlayer(player._id)}>Delete</button>
-            </div>
+            </div> */}
           </div>
         );
       })}

@@ -36,7 +36,7 @@ const Home = (props) => {
           })}
         </div>
       </div>
-      <div className="d-flex">
+      <div className="d-flex gap">
         <div className="container">
           <h1 className="navy-color">T-Mobile Park</h1>
           {/* <h2 className="silver-color">Virtual Venue<a href=""/></h2> */}
